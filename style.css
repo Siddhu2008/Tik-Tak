@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    background-color: #212529;
+    color: #fff;
+    height: 50px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Game Container */
+.gamecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 20px;
+}
+
+/* Tic Tac Toe Grid - Mobile First */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+    gap: 8px;
+}
+
+.box {
+    background-color: #fff;
+    border: 2px solid #6c757d;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box:hover {
+    background-color: #e9ecef;
+    transform: scale(1.05);
+}
+
+/* Game Info Panel */
+.gameinfo {
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+}
+
+.gameinfo h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #212529;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#reset {
+    background-color: #0d6efd;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#reset:hover {
+    background-color: #0b5ed7;
+}
+
+.imgbox img {
+    width: 70px;
+    height: 70px;
+    transition: all 0.5s ease;
+    display: none;
+    margin: 0 auto;
+}
+
+/* Rounded Borders for Grid */
+.br-0 {
+    border-right: 0;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}
+
+/* Tablet / Larger Screens */
+@media screen and (min-width: 500px) {
+    .container {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 10px;
+    }
+
+    .box {
+        font-size: 2.5rem;
+    }
+
+    .gameinfo {
+        padding: 20px;
+        max-width: 350px;
+    }
+
+    .gameinfo h1 {
+        font-size: 1.6rem;
+    }
+
+    #reset {
+        padding: 8px 16px;
+        font-size: 1rem;
+    }
+
+    .imgbox img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Desktop / Large Screens */
+@media screen and (min-width: 900px) {
+    .container {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(3, 100px);
+        gap: 12px;
+    }
+
+    .box {
+        font-size: 3rem;
+    }
+
+    .gameinfo {
+        max-width: 400px;
+    }
+
+    .gameinfo h1 {
+        font-size: 1.8rem;
+    }
+
+    .imgbox img {
+        width: 120px;
+        height: 120px;
+    }
+}
